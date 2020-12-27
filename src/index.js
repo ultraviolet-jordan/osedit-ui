@@ -1,18 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route } from "react-router-dom";
+import App from './app';
 
 import * as serviceWorker from './utils/serviceWorker';
 
 ReactDOM.render(
-  <React.StrictMode>
-     <BrowserRouter>
-        <div className="App">
-          <Route path="/" exact render={() => <div>Fuck my dick</div> } />
-        </div>
-      </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
+	<React.StrictMode>
+		<App />
+	</React.StrictMode>,
+	document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
