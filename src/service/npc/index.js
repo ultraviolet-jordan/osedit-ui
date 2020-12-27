@@ -1,5 +1,5 @@
-import axios from 'axios';
+import ApiService from '../ApiService';
 
-const BASE_URL = 'http://localhost:8080/npcs'
+const npcAPI = new ApiService("http://localhost:8080")
 
-export const getAllNpcs = () => axios.get(BASE_URL).then((response) => response.data)
+export const getAllNpcs = (searchData) => npcAPI.post('/npcs/search', { data: searchData }).then((response) => response.data)

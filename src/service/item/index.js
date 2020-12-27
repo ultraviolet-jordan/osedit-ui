@@ -1,5 +1,5 @@
-import axios from 'axios';
+import ApiService from '../ApiService';
 
-const BASE_URL = 'http://localhost:8080/items'
+const api = new ApiService("http://localhost:8080")
 
-export const getAllItems = () => axios.get(BASE_URL).then((response) => response.data)
+export const getAllItems = api.get('/items').then((response) => response.data)
