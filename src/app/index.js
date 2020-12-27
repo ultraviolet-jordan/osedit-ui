@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
-import ItemDashBoard from './items';
-import NPCDashboard from './npcs';
+import ItemDashBoard from './item';
+import NpcDashboard from './npc';
 
 const App = () => {
     return (
@@ -14,11 +14,11 @@ const App = () => {
                     />
                     <Route
                         path="/npcs"
-                        component= { NPCDashboard }
+                        component= { NpcDashboard }
                     />
                     <Redirect
                         from="*"
-                        to="/items"
+                        to="/npcs"
                     />
                 </Switch>
             </BrowserRouter>
