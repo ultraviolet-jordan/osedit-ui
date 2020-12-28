@@ -46,30 +46,17 @@ function Row(props) {
                     <Collapse in={open} timeout="auto" unmountOnExit>
                         <Box margin={1}>
                             <Typography variant="h6" gutterBottom component="div">
-                                History
+                                Information
                             </Typography>
                             <Table size="small" aria-label="purchases">
-                                <TableHead>
-                                    <TableRow>
-                                        <TableCell>Date</TableCell>
-                                        <TableCell>Customer</TableCell>
-                                        <TableCell align="right">Amount</TableCell>
-                                        <TableCell align="right">Total price ($)</TableCell>
-                                    </TableRow>
-                                </TableHead>
                                 <TableBody>
-                                    {row.history.map((historyRow) => (
-                                        <TableRow key={historyRow.date}>
-                                            <TableCell component="th" scope="row">
-                                                {historyRow.date}
-                                            </TableCell>
-                                            <TableCell>{historyRow.customerId}</TableCell>
-                                            <TableCell align="right">{historyRow.amount}</TableCell>
-                                            <TableCell align="right">
-                                                {Math.round(historyRow.amount * row.price * 100) / 100}
-                                            </TableCell>
-                                        </TableRow>
-                                    ))}
+                                    <TableRow><TableCell>Standing Animation ({row.standingAnimation})</TableCell></TableRow>
+                                    <TableRow><TableCell>Rotate Left Animation ({row.rotateLeftAnimation})</TableCell></TableRow>
+                                    <TableRow><TableCell>Rotate Right Animation ({row.rotateRightAnimation})</TableCell></TableRow>
+                                    <TableRow><TableCell>Walking Animation ({row.walkingAnimation})</TableCell></TableRow>
+                                    <TableRow><TableCell>Rotate 180 Animation ({row.rotate180Animation})</TableCell></TableRow>
+                                    <TableRow><TableCell>Rotate 90 Right Animation ({row.rotate90RightAnimation})</TableCell></TableRow>
+                                    <TableRow><TableCell>Rotate 90 Left Animation ({row.rotate90LeftAnimation})</TableCell></TableRow>
                                 </TableBody>
                             </Table>
                         </Box>
@@ -102,10 +89,13 @@ const createRows = (npcs) => {
     return npcs.map((npc) => ({
         name: npc.name,
         combatLevel: npc.combatLevel,
-        history: [
-            { date: '2020-01-05', customerId: '11091700', amount: 3 },
-            { date: '2020-01-02', customerId: 'Anonymous', amount: 1 },
-        ],
+        standingAnimation: npc.standingAnimation,
+        rotateLeftAnimation: npc.rotateLeftAnimation,
+        rotateRightAnimation: npc.rotateRightAnimation,
+        walkingAnimation: npc.walkingAnimation,
+        rotate180Animation: npc.rotate180Animation,
+        rotate90RightAnimation: npc.rotate90RightAnimation,
+        rotate90LeftAnimation: npc.rotate90LeftAnimation
     }));
 }
 
@@ -135,7 +125,7 @@ function BuildTable(npcs) {
 const NpcList = (props) => {
     return (
         <div className="npc-list">
-            { BuildTable(props.npcs) }
+            { BuildTable(props.npcs)}
             {/* { props.npcs.map((npc, index) => <div key={index}>{npc.name}</div>)} */}
         </div>
     )
