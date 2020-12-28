@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import { getAllItems } from '../../service/item';
 
-import ItemList from './itemList';
+import ItemList from './ItemList';
 
 const ItemDashBoard = () => {
     const [state, setState] = useState({
@@ -23,7 +23,7 @@ const ItemDashBoard = () => {
     return (
         <div className="items-container container">
             <h2>OSRS Items:</h2>
-            <ItemList items={ state.items } />
+            <ItemList items={ state.items }/>
         </div>
     );
 };
