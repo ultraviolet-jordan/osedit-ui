@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { getAllNpcs } from '../../service/npc';
-import NpcList from './NpcList';
+import NpcList from './npcList';
 
 import TablePagination from '@material-ui/core/TablePagination';
 
@@ -95,7 +95,9 @@ const NpcDashboard = () => {
 
     return (
         <div className="npcs-container container">
-            <h1>OSRS Npcs: {state.totalElements} </h1>
+            <div title="npcs-container-title container-title" style={{display:'flex', justifyContent:'center'}}>
+                <h1>OSRS Npcs: {state.totalElements} </h1>
+            </div>
             { pagination }
             { NpcSearchHeader(state.npcs)}
             { state.isLoaded && <NpcList npcs={state.npcs} /> }
