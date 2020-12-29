@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import { getAllItems } from '../../service/item';
 
-import ItemList from './itemList';
+import ItemList from './ItemList';
 
 const ItemDashBoard = () => {
     const [state, setState] = useState({

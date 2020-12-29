@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { getAllNpcs } from '../../service/npc';
-import NpcList from './npcList';
+import NpcList from './NpcList';
 
 import TablePagination from '@material-ui/core/TablePagination';
 
