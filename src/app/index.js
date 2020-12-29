@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import ItemDashBoard from './item';
+import MapDashboard from './map';
 import NpcDashboard from './npc';
 import OverlayDashboard from './overlay';
 
@@ -21,9 +22,13 @@ const App = () => {
                         path="/overlays"
                         component= { OverlayDashboard }
                     />
+                    <Route
+                        path="/map"
+                        component= { MapDashboard }
+                    />
                     <Redirect
                         from="*"
-                        to="/overlays"
+                        to="/map"
                     />
                 </Switch>
             </BrowserRouter>

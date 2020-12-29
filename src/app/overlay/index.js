@@ -4,7 +4,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 import { getAllOverlays } from '../../service/overlay';
 
-const OverlayDashboard = () => {
+const OverlaySwatches = () => {
     const [overlays, setOverlays] = useState([]);
     const [isLoaded, setLoaded] = useState(false);
 
@@ -21,12 +21,9 @@ const OverlayDashboard = () => {
 
     return (
         <div className="overlay-container container">
-            <h1>
-                OSRS Overlays
-            </h1>
-            { overlays.map((overlay) => <img src={`http://localhost:8080/overlays/view/${overlay.id}`}></img>)}
+            { overlays.map((overlay) => <img src={`http://localhost:8080/overlays/view/${overlay.id}`} />)}
         </div>
     );
 };
 
-export default OverlayDashboard;
+export default OverlaySwatches;
